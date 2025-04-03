@@ -40,12 +40,21 @@ sudo apt update && sudo apt install -y python3.12-venv python3.12-dev python3-pi
 ```
 
 
-# Install Node.js, npm, & Yarn
+# Install Node.js , npm & yarn
 
 * For Linux/Wsl
 
 ```
-  curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - && sudo apt update && sudo apt install -y nodejs && corepack enable && npm install -g yarn
+  curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - && sudo apt update && sudo apt install -y nodejs 
+```
+* Install Yarn (linux)
+
+```
+sudo corepack enable
+```
+
+```
+corepack prepare yarn@stable --activate
 ```
 
 * For Mac
