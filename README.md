@@ -11,7 +11,7 @@
 
 ❌❌The Node Wont work on low Specs Devices, It can Cause System Crashing if u try on Low Specs Devices
 
-# Pre-Requirements
+# Pre-Requirements 🛠
 
 # Install Python and Other Tools
 
@@ -68,7 +68,7 @@ yarn -v
 
 <div align="center">
 
-# 💻 Start The Node (Linux/Mac) 
+# 👨🏻‍💻 Start The Node (Linux/Mac) 
 
 </div>
 
@@ -79,31 +79,44 @@ yarn -v
 git clone https://github.com/gensyn-ai/rl-swarm.git
 ```
 
-* 2️⃣ Navigate to rl-swarm
+
+* 2️⃣ Create a screen session (vps)
+
+```
+screen -S gensyn
+````
+
+* 3️⃣ Navigate to rl-swarm
 
 ```
 cd rl-swarm
 ```
 
-* 3️⃣ Create & Activate a Virtual Environment
+* 4️⃣ Create & Activate a Virtual Environment
 
 ```
 python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-* 4️⃣ Run the swarm Node 🚀
+* 5️⃣ Install Left-over dependencies
+
+```
+cd /root/rl-swarm/modal-login/ && yarn upgrade &&  yarn add next@latest &&  yarn add viem@latest
+```
+
+* 6️⃣ Run the swarm Node 🚀
 
 ```
 ./run_rl_swarm.sh
 ```
 
-- After Running the Avobe command it will promt `Would you like to connect to the Testnet? [Y/n]` Enter `Y`
+- After Running the Above command it will promt `Would you like to connect to the Testnet? [Y/n]` Enter `Y`
 
-- A web Pop-Up will appear, It will ask u to Login ( if no web pop-up then u have to paste this on ur brower `http://localhost:3000/`
+- A web Pop-Up will appear, It will ask u to Login ( if no web pop-up then u have to paste this on ur brower `http://localhost:3000/` 
 
 
-- Now Login With Your Email Id, Enter OTP and back to ur Terminal/Wsl?
+- Now Login With Your Email Id, Enter OTP and back to ur Terminal/Wsl? ( VPS users check FAQ1)
 
 ![image](https://github.com/user-attachments/assets/1fed4b08-4ec4-44de-868c-b2d314cd2a02)
 
@@ -127,21 +140,66 @@ Its Done ✅
 It will Generate Logs Soon🙌
 
 
+* Detach from `screen session` (vps)
 
+Use `Ctrl + A` and then press `D`
 
+* Attach to gensyn Screen to see Logs
 
-
+```
+screen -r gensyn
+```
 
 
 
 <div align="center">
 
-# FAQ & Troubleshoot 
+#  🛠 FAQ & Troubleshoot 🛠
 
 </div>
 
 
-# 1️⃣ Solution of OOM errors on MacBook (Memory/Cpu limit)
+# 1️⃣ How to Login or access  http://localhost:3000/ in VPS? 📶
+
+* Open a new Terminal and login ur vps 
+
+* Allow Incoming connection on VPS
+
+```
+sudo apt install ufw -y
+sudo ufw allow 3000/tcp
+```
+
+* Enable ufw
+
+```
+sudo ufw enable
+```
+
+* Go to `chrome://flags/#unsafely-treat-insecure-origin-as-secure` (use secondary chrome profile)
+
+
+![image](https://github.com/user-attachments/assets/d95e7e44-2325-4dd5-93a7-62baab27c7d1)
+
+* Enter your public ip and port (3000) here (check ss )
+
+`http://PUBLIC-IP:3000`
+
+![Screenshot 2025-04-05 015227](https://github.com/user-attachments/assets/3fc367a3-969b-41f4-9be5-4918e941733a)
+
+* `Enabled` It
+
+* To apply changes It will promt you to `Relaunch` 
+
+* Now Open 2nd tab in chrome and enter your `PUBLIC_IP:3000` in this formate
+
+* Now follow Login!
+ 
+* Done!✅
+
+
+
+# 2️⃣ Solution of OOM errors on MacBook (Memory/Cpu limit)
 
 * Open -
  ```
@@ -166,6 +224,12 @@ export PYTORCH_ENABLE_MPS_FALLBACK=1
 
 ![image](https://github.com/user-attachments/assets/728c6401-75c8-43b4-973c-e9d515c4b453)
 
+# 4️⃣ Save your `swarm.pem` file (for future login)
+
+```
+nano ~/rl-swarm/swarm.pem
+```
+
 
 
 Follow official Docs for more info and Errors!
@@ -176,5 +240,5 @@ https://github.com/gensyn-ai/rl-swarm/tree/brian-address-cpu-only-crashes?tab=re
 
 If U have any issue then open a issue on this repo or Dm me on TG~
 
-Thank U❤️
+Thank U! 👨🏻‍💻 Happy Coding💗
 
