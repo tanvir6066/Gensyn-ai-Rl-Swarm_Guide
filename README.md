@@ -13,12 +13,13 @@
 
 # Pre-Requirements
 
-# Install Python
+# Install Python and Other Tools
 
 * For Linux/Wsl
 
 ```
-sudo add-apt-repository -y ppa:deadsnakes/ppa && sudo apt update && sudo apt install -y python3.12 python3.12-venv python3.12-dev
+sudo apt update && sudo apt install -y python3 python3-venv python3-pip curl wget screen git lsof
+
 ```
 
 * For Mac
@@ -33,12 +34,6 @@ Check Version
 python3 --version
 ```
 
-# Install Other Dependencies
-
-```
-sudo apt update && sudo apt install -y python3.12-venv python3.12-dev python3-pip curl wget screen git lsof
-```
-
 
 # Install Node.js , npm & yarn
 
@@ -50,12 +45,12 @@ sudo apt update && sudo apt install -y python3.12-venv python3.12-dev python3-pi
 * Install Yarn (linux)
 
 ```
-sudo corepack enable
-```
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - && \
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list && \
+sudo apt update && sudo apt install -y yarn
 
 ```
-corepack prepare yarn@stable --activate
-```
+
 
 * For Mac
 
@@ -165,7 +160,7 @@ export PYTORCH_ENABLE_MPS_FALLBACK=1
   source ~/.zshrc
 ```
 
-# 2️⃣ How to get the Node Name?
+# 3️⃣ How to get the Node Name?
 
 * Check the image below to get your Node id!
 
