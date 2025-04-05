@@ -120,10 +120,22 @@ source .venv/bin/activate
 * 5️⃣ Install Left-over dependencies
 
 ```
-cd /root/rl-swarm/modal-login/ && yarn upgrade &&  yarn add next@latest &&  yarn add viem@latest
+cd modal-login
+```
+
+```
+yarn install
+```
+
+```
+yarn upgrade &&  yarn add next@latest &&  yarn add viem@latest
 ```
 
 * 6️⃣ Run the swarm Node 🚀
+
+```
+cd ..
+```
 
 ```
 ./run_rl_swarm.sh
