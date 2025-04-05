@@ -46,7 +46,8 @@ python3 --version
 * For Linux/Wsl
 
 ```
-  curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - && sudo apt update && sudo apt install -y nodejs 
+  curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - && echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list > /dev/null && sudo apt update && sudo apt install -y yarn
+
 ```
 * Install Yarn (linux)
 
@@ -68,9 +69,15 @@ brew install node && corepack enable && npm install -g yarn
 
 ```
 node -v
+```
+```
 npm -v
+```
+
+```
 yarn -v
 ```
+
 
 <div align="center">
 
