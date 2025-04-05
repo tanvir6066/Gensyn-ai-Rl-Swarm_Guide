@@ -9,7 +9,7 @@
 
 ![image](https://github.com/user-attachments/assets/594d0847-362b-4ea6-9e61-8590105421c8)
 
-❌❌The Node Wont work on low Specs Devices, It can Cause System Crashing if u try on Low Specs Devices
+**❌❌The Node Wont work on low Specs Devices, It can Cause System Crashing if u try on Low Specs Devices**
 
 * Open Your Vps
 
@@ -21,14 +21,14 @@ ssh username@ip
 
 # Install Python and Other Tools
 
-* For Linux/Wsl
+* For **Linux/Wsl**
 
 ```
 sudo apt update && sudo apt install -y python3 python3-venv python3-pip curl wget screen git lsof
 
 ```
 
-* For Mac
+* **For Mac**
 
 ```
 brew install python
@@ -43,7 +43,7 @@ python3 --version
 
 # Install Node.js , npm & yarn
 
-* For Linux/Wsl
+* For **Linux/Wsl**
 
 ```
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - && sudo apt update && sudo apt install -y nodejs
@@ -64,13 +64,13 @@ sudo apt update && sudo apt install -y yarn
 ```
 
 
-* For Mac
+* For **Mac**
 
 ```
 brew install node && corepack enable && npm install -g yarn
 ```
 
-* Check version (Linux/Mac)
+* Check version **(Linux/Mac)**
 
 ```
 node -v
@@ -98,7 +98,7 @@ git clone https://github.com/gensyn-ai/rl-swarm.git
 ```
 
 
-* 2️⃣ Create a screen session (vps)
+* 2️⃣ Create a screen session **(vps)**
 
 ```
 screen -S gensyn
@@ -146,7 +146,7 @@ cd ..
 - A web Pop-Up will appear, It will ask u to Login ( if no web pop-up then u have to paste this on ur brower `http://localhost:3000/` 
 
 
-- Now Login With Your Email Id, Enter OTP and back to ur Terminal/Wsl? ( VPS users check FAQ1)
+- Now Login With Your Email Id, Enter OTP and back to ur Terminal/Wsl? **( VPS users check FAQ1 )**
 
 ![image](https://github.com/user-attachments/assets/1fed4b08-4ec4-44de-868c-b2d314cd2a02)
 
@@ -170,7 +170,7 @@ Its Done ✅
 It will Generate Logs Soon🙌
 
 
-* Detach from `screen session` (vps)
+* Detach from `screen session` **(vps)**
 
 Use `Ctrl + A` and then press `D`
 
@@ -206,22 +206,34 @@ sudo ufw allow 3000/tcp
 sudo ufw enable
 ```
 
-* Go to `chrome://flags/#unsafely-treat-insecure-origin-as-secure` (use secondary chrome profile)
+* Install cloudflared on the VPS
 
+```
+wget -q https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
+````
 
-![image](https://github.com/user-attachments/assets/d95e7e44-2325-4dd5-93a7-62baab27c7d1)
+```
+sudo dpkg -i cloudflared-linux-amd64.deb
+```
 
-* Enter your public ip and port (3000) here (check ss )
+* Check version
 
-`http://PUBLIC-IP:3000`
+```
+cloudflared --version
+```
 
-![Screenshot 2025-04-05 015227](https://github.com/user-attachments/assets/3fc367a3-969b-41f4-9be5-4918e941733a)
+* Make sure your Node is running on port 3000 in Previous Screen
 
-* `Enabled` It
+* Run the tunnel command
 
-* To apply changes It will promt you to `Relaunch` 
+```
+cloudflared tunnel --url http://localhost:3000
+```
 
-* Now Open 2nd tab in chrome and enter your `PUBLIC_IP:3000` in this formate
+* Access the Link from your local machine
+
+    
+    ![image](https://github.com/user-attachments/assets/c5bdfec5-123d-4625-8da8-f46269700950)
 
 * Now follow Login!
  
@@ -260,6 +272,27 @@ export PYTORCH_ENABLE_MPS_FALLBACK=1
 nano ~/rl-swarm/swarm.pem
 ```
 
+# 5️⃣ How To start the Next Day (Local Pc)
+
+*
+ ```
+  cd rl-swarm
+ ```
+
+*
+ ```
+  python3 -m venv .venv
+```
+
+*
+```
+source .venv/bin/activate
+```
+
+*
+```
+./run_rl_swarm.sh
+```
 
 
 Follow official Docs for more info and Errors!
