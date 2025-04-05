@@ -268,9 +268,19 @@ export PYTORCH_ENABLE_MPS_FALLBACK=1
 
 # 4️⃣ Save your `swarm.pem` file (for future login)
 
+* You can see with this command
+
 ```
 nano ~/rl-swarm/swarm.pem
 ```
+
+* If U have to copy this file to your local machine from VPS then Run this command from your local Terminal--
+
+```
+scp USERNAME@YOUR_IP:~/rl-swarm/swarm.pem ~/swarm.pem
+```
+It will save here in ur Terminal's Root Directory!
+
 
 # 5️⃣ How To start the Next Day (Local Pc)
 
