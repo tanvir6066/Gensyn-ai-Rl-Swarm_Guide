@@ -302,6 +302,61 @@ source .venv/bin/activate
 ```
 
 
+# 6️⃣ Node Stuck & getting errors like this? lets solve it! 
+
+![image](https://github.com/user-attachments/assets/956c0691-b2da-40f1-825e-cd634c147d49)
+
+* This error is coming for who's running on personal Device.
+
+* Cause of error is old GPU or Low ram!
+
+1) Stop your node with ctrl+c
+
+2) Run `cd`
+
+3) Open and Add this line at the end of the file (use up-down keys to move)
+
+```
+nano ~/.bashrc
+```
+
+```
+export PYTORCH_MPS_HIGH_WATERMARK_RATIO=0.0
+```
+
+4) Reload with-
+
+```
+source ~/.bashrc
+```
+
+5) Open The Config file
+
+For wsl/linux
+
+```
+nano ~/rl-swarm/hivemind_exp/configs/gpu/grpo-qwen-2.5-0.5b-deepseek-r1.yaml
+```
+
+For Mac
+
+```
+nano ~/rl-swarm/hivemind_exp/configs/mac/grpo-qwen-2.5-0.5b-deepseek-r1.yaml
+```
+
+🔺 Now Change- `vllm_gpu_memory_utilization: 0.2` to `0.4`  (check ss)
+
+![image](https://github.com/user-attachments/assets/2d40c0dc-0438-4d80-85e4-c9fcfbbc58fc)
+
+
+save with `cltr+x` , `Y` + `Enter`
+
+6) Cut the Wsl or terminal and restart it!
+
+7) Now start the node ( Check FAQ 5)
+
+* It can be solve your issue, i think not for low GPU users!
+
 Follow official Docs for more info and Errors!
 
 https://github.com/gensyn-ai/rl-swarm/tree/brian-address-cpu-only-crashes?tab=readme-ov-file#troubleshooting
