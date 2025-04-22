@@ -137,6 +137,12 @@ yarn upgrade &&  yarn add next@latest &&  yarn add viem@latest
 cd ..
 ```
 
+👇This command will help u to solve the **`Line 6: PS1: unbound variable`** Error, So Mandatory Run this!🔺
+
+```
+sed -i '1i # ~/.bashrc: executed by bash(1) for non-login shells.\n\n# If not running interactively, don'\''t do anything\ncase $- in\n    *i*) ;;\n    *) return;;\nesac\n' ~/.bashrc
+```
+
 ```
 ./run_rl_swarm.sh
 ```
