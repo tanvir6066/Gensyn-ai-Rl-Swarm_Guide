@@ -203,6 +203,7 @@ screen -r gensyn
 
 ```
 sudo apt install ufw -y
+sudo ufw allow 22
 sudo ufw allow 3000/tcp
 ```
 
