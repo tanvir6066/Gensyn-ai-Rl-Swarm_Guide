@@ -7,9 +7,9 @@
 
 # Device/System Requirements 🖥️
 
-![image](https://github.com/user-attachments/assets/594d0847-362b-4ea6-9e61-8590105421c8)
+![image](https://github.com/user-attachments/assets/4fbf23bb-846c-4def-be24-157c51fa0b4e)
 
-**❌❌The Node Wont work on low Specs Devices, It can Cause System Crashing if u try on Low Specs Devices**
+
 
 * Open Your Vps
 
@@ -137,19 +137,27 @@ yarn upgrade &&  yarn add next@latest &&  yarn add viem@latest
 cd ..
 ```
 
-👇This command will help u to solve the **`Line 6: PS1: unbound variable`** Error, So Mandatory Run this!🔺
-
-```
-sed -i '1i # ~/.bashrc: executed by bash(1) for non-login shells.\n\n# If not running interactively, don'\''t do anything\ncase $- in\n    *i*) ;;\n    *) return;;\nesac\n' ~/.bashrc
-```
-
 ```
 ./run_rl_swarm.sh
 ```
 
 - After Running the Above command it will promt `Would you like to connect to the Testnet? [Y/n]` Enter `Y`
 
-- A web Pop-Up will appear, It will ask u to Login ( if no web pop-up then u have to paste this on ur brower `http://localhost:3000/` 
+- After than it will promt `>> Which swarm would you like to join (Math (A) or Math Hard (B))? [A/b]`  Enter   `a`
+
+- After than it will promt `>> How many parameters (in billions)? [0.5, 1.5, 7, 32, 72]`    
+
+👇See below and Choose the model Depends on Your System! 
+
+<pre>
+- Qwen 2.5 0.5B                - Recommended 4GB RAM, (1GB DOWNLOAD)
+- Qwen 2.5 1.5B                - Recommended 8GB RAM, (4GB DOWNLOAD)
+- Qwen 2.5 7B                  - Recommended 16GB RAM, (15GB DOWNLOAD)
+- Qwen 2.5 32B (4 bit)         - Recommended 50GB RAM, (35GB DOWNLOAD)
+- Qwen 2.5 72B (4 bit)         - Recommended 100GB RAM, (70GB DOWNLOAD)
+</pre>
+    
+- After that A web Pop-Up will appear, It will ask u to Login ( if no web pop-up then u have to paste this on ur brower `http://localhost:3000/` 
 
 
 - Now Login With Your Email Id, Enter OTP and back to ur Terminal/Wsl? **( VPS users check FAQ1 )**
@@ -160,14 +168,15 @@ sed -i '1i # ~/.bashrc: executed by bash(1) for non-login shells.\n\n# If not ru
 - Now U can see A `ORG_ID` On ur Terminal..Save it!
 
 
-
 * Now It will promt `Would you like to push models you train in the RL swarm to the Hugging Face Hub? [y/N]` Enter `N`
 
-![image](https://github.com/user-attachments/assets/b63da75d-389a-4ded-9c4e-cd23804d94ef)
+<img width="1223" alt="Screenshot 2025-05-01 at 4 47 30 PM" src="https://github.com/user-attachments/assets/05fcfc61-b562-4089-b21f-ba95b1036a24" />
 
 
 
-![image](https://github.com/user-attachments/assets/35321942-1aa3-47f1-92a3-dae9881b64cd)
+
+![image](https://github.com/user-attachments/assets/33344c45-a108-4671-af31-a5e431878736)
+
 
 Here we go🚀
 
@@ -309,64 +318,88 @@ source .venv/bin/activate
 ```
 
 
-# 6️⃣ Node Stuck & getting errors like this? lets solve it! 
 
-![image](https://github.com/user-attachments/assets/956c0691-b2da-40f1-825e-cd634c147d49)
 
-* This error is coming for who's running on personal Device.
 
-* Cause of error is old GPU or Low ram!
+<div align="center">
 
-1) Stop your node with ctrl+c
+# 📈 How to upgrade to new release (v0.4.0) {Mac/Linux} 
 
-2) Run `cd`
+</div>
 
-3) Open and Add this line at the end of the file (use up-down keys to move)
+* Go to gensyn screen (Vps)
 
 ```
-nano ~/.bashrc
+screen -r gensyn
 ```
 
-```
-export PYTORCH_MPS_HIGH_WATERMARK_RATIO=0.0
-```
+* Stop your node by `ctrl+c` if u are on gensyn screen (Vps)
 
-4) Reload with-
-
+* Move to rl-swarm directory
 ```
-source ~/.bashrc
+cd rl-swarm
 ```
 
-5) Open The Config file
-
-For wsl/linux
+* Pull the latest release
 
 ```
-nano ~/rl-swarm/hivemind_exp/configs/gpu/grpo-qwen-2.5-0.5b-deepseek-r1.yaml
+git pull
 ```
 
-For Mac
+* Start the swarm Node 🚀
 
 ```
-nano ~/rl-swarm/hivemind_exp/configs/mac/grpo-qwen-2.5-0.5b-deepseek-r1.yaml
+./run_rl_swarm.sh
 ```
 
-🔺 Now Change- `vllm_gpu_memory_utilization: 0.2` to `0.4`  (check ss)
+- After Running the Above command it will promt `Would you like to connect to the Testnet? [Y/n]` Enter `Y`
 
-![image](https://github.com/user-attachments/assets/2d40c0dc-0438-4d80-85e4-c9fcfbbc58fc)
+- After than it will promt `>> Which swarm would you like to join (Math (A) or Math Hard (B))? [A/b]`  Enter   `a`
+
+- After than it will promt `>> How many parameters (in billions)? [0.5, 1.5, 7, 32, 72]`    
+
+👇See below and Choose the model Depends on Your System! 
+
+<pre>
+- Qwen 2.5 0.5B                - Recommended 4GB RAM, (1GB DOWNLOAD)
+- Qwen 2.5 1.5B                - Recommended 8GB RAM, (4GB DOWNLOAD)
+- Qwen 2.5 7B                  - Recommended 16GB RAM, (15GB DOWNLOAD)
+- Qwen 2.5 32B (4 bit)         - Recommended 50GB RAM, (35GB DOWNLOAD)
+- Qwen 2.5 72B (4 bit)         - Recommended 100GB RAM, (70GB DOWNLOAD)
+</pre>
+    
+- After that A web Pop-Up will appear, It will ask u to Login ( if no web pop-up then u have to paste this on ur brower `http://localhost:3000/` 
 
 
-save with `cltr+x` , `Y` + `Enter`
+- Now Login With Your Email Id, Enter OTP and back to ur Terminal/Wsl? **( VPS users check FAQ1 )**
 
-6) Cut the Wsl or terminal and restart it!
+![image](https://github.com/user-attachments/assets/1fed4b08-4ec4-44de-868c-b2d314cd2a02)
 
-7) Now start the node ( Check FAQ 5)
 
-* It can be solve your issue, i think not for low GPU users!
+- Now U can see A `ORG_ID` On ur Terminal..Save it!
+
+
+* Now It will promt `Would you like to push models you train in the RL swarm to the Hugging Face Hub? [y/N]` Enter `N`
+
+<img width="1223" alt="Screenshot 2025-05-01 at 4 47 30 PM" src="https://github.com/user-attachments/assets/05fcfc61-b562-4089-b21f-ba95b1036a24" />
+
+
+
+
+![image](https://github.com/user-attachments/assets/33344c45-a108-4671-af31-a5e431878736)
+
+
+
+
+
+
+
+
+
+
 
 Follow official Docs for more info and Errors!
 
-https://github.com/gensyn-ai/rl-swarm/tree/brian-address-cpu-only-crashes?tab=readme-ov-file#troubleshooting
 
 👉 Join TG for more Updates: https://telegram.me/cryptogg
 
