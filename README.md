@@ -340,11 +340,20 @@ screen -r gensyn
 cd rl-swarm
 ```
 
-* Pull the latest release
+* Pull the latest release (If u didn't make any changes in files previously)
 
 ```
 git pull
 ```
+
+* Pull the latest release ( If u make any changes in files previously)
+
+
+```
+git reset --hard HEAD
+git pull
+```
+
 
 * Start the swarm Node 🚀
 
