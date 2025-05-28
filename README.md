@@ -323,7 +323,7 @@ source .venv/bin/activate
 
 <div align="center">
 
-# 📈 How to upgrade to new release (v0.4.2) {Mac/Linux} 
+# 📈 Upgrade to new release (v0.4.3) {Mac/Linux} 
 
 </div>
 
@@ -340,18 +340,13 @@ screen -r gensyn
 cd rl-swarm
 ```
 
-* Pull the latest release (If u didn't make any changes in files previously)
-
-```
-git pull
-```
-
-* Pull the latest release ( If u make any changes in files previously)
+* Pull the latest release 
 
 
 ```
-git reset --hard HEAD
-git pull
+git reset --hard
+git pull origin main
+git checkout tags/v0.4.3
 ```
 
 
