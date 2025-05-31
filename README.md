@@ -162,20 +162,21 @@ cd ..
 
 - Now Login With Your Email Id, Enter OTP and back to ur Terminal/Wsl? **( VPS users check FAQ1 )**
 
-![image](https://github.com/user-attachments/assets/1fed4b08-4ec4-44de-868c-b2d314cd2a02)
-
 
 - Now U can see A `ORG_ID` On ur Terminal..Save it!
 
 
 * Now It will promt `Would you like to push models you train in the RL swarm to the Hugging Face Hub? [y/N]` Enter `N`
 
-<img width="1223" alt="Screenshot 2025-05-01 at 4 47 30 PM" src="https://github.com/user-attachments/assets/05fcfc61-b562-4089-b21f-ba95b1036a24" />
+* After that it will ask u to select 3 choices related to `W&B Account` just enter `3` - wandb: (3) (Don't visualize my results )
+
+* If u have to see your node's details or logs on WANDB WEB then u can choose 1 and enter your api key there, so it will sync your node to wandb web!
+
+![image](https://github.com/user-attachments/assets/e31345ce-c66c-45b1-a861-e3cc96308544)
 
 
+![image](https://github.com/user-attachments/assets/c700e3ce-64b6-4bfb-86c4-fd2f2050c88d)
 
-
-![image](https://github.com/user-attachments/assets/33344c45-a108-4671-af31-a5e431878736)
 
 
 Here we go🚀
@@ -319,6 +320,33 @@ source .venv/bin/activate
 
 
 
+# 6️⃣ Solution of >> Shutting Down trainer.. at the starting of node!
+
+❗❗This solution is not for whoes who have the terminated error after the login process!
+
+![image](https://github.com/user-attachments/assets/ac617699-77ce-4bae-8083-1c134386bb47)
+
+
+* install pino-pretty
+
+```
+yarn add -D pino-pretty
+```
+
+* Make changes
+
+```
+rm -rf $HOME/rl-swarm/modal-login/app/layout.tsx
+```
+
+```
+curl -o $HOME/rl-swarm/modal-login/app/layout.tsx https://raw.githubusercontent.com/Mayankgg01/Gensyn-ai-Rl-Swarm_Guide/main/rl-swarm/modal-login/app/layout.tsx
+```
+
+
+* Now follow the process of starting the node.
+
+❗❗IMP: if ur node got terminate after the login, Then just Restart your node:
 
 
 <div align="center">
@@ -344,9 +372,10 @@ cd rl-swarm
 
 
 ```
+git switch main
 git reset --hard
+git clean -fd
 git pull origin main
-git checkout tags/v0.4.3
 ```
 
 
@@ -356,49 +385,7 @@ git checkout tags/v0.4.3
 ./run_rl_swarm.sh
 ```
 
-- After Running the Above command it will promt `Would you like to connect to the Testnet? [Y/n]` Enter `Y`
-
-- After than it will promt `>> Which swarm would you like to join (Math (A) or Math Hard (B))? [A/b]`  Enter   `a`
-
-- After than it will promt `>> How many parameters (in billions)? [0.5, 1.5, 7, 32, 72]`    
-
-👇See below and Choose the model Depends on Your System! 
-
-<pre>
-- Qwen 2.5 0.5B                - Recommended 4GB RAM, (1GB DOWNLOAD)
-- Qwen 2.5 1.5B                - Recommended 8GB RAM, (4GB DOWNLOAD)
-- Qwen 2.5 7B                  - Recommended 16GB RAM, (15GB DOWNLOAD)
-- Qwen 2.5 32B (4 bit)         - Recommended 50GB RAM, (35GB DOWNLOAD)
-- Qwen 2.5 72B (4 bit)         - Recommended 100GB RAM, (70GB DOWNLOAD)
-</pre>
-    
-- After that A web Pop-Up will appear, It will ask u to Login ( if no web pop-up then u have to paste this on ur brower `http://localhost:3000/` 
-
-
-- Now Login With Your Email Id, Enter OTP and back to ur Terminal/Wsl? **( VPS users check FAQ1 )**
-
-![image](https://github.com/user-attachments/assets/1fed4b08-4ec4-44de-868c-b2d314cd2a02)
-
-
-- Now U can see A `ORG_ID` On ur Terminal..Save it!
-
-
-* Now It will promt `Would you like to push models you train in the RL swarm to the Hugging Face Hub? [y/N]` Enter `N`
-
-<img width="1223" alt="Screenshot 2025-05-01 at 4 47 30 PM" src="https://github.com/user-attachments/assets/05fcfc61-b562-4089-b21f-ba95b1036a24" />
-
-
-
-
-![image](https://github.com/user-attachments/assets/33344c45-a108-4671-af31-a5e431878736)
-
-
-
-
-
-
-
-
+* All set, As You guys alraedy know what to do next! No need to told again! just follow the login process and select model.
 
 
 
@@ -409,5 +396,7 @@ Follow official Docs for more info and Errors!
 
 If U have any issue then open a issue on this repo or Dm me on TG~
 
-Thank U! 👨🏻‍💻 Happy Coding💗
+Thank U! 👨🏻‍💻
+
+Happy Coding💗
 
