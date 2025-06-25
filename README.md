@@ -5,7 +5,7 @@
 </div>
 
 
-# Device/System Requirements 🖥️
+## Device/System Requirements 🖥️
 
 ![image](https://github.com/user-attachments/assets/4fbf23bb-846c-4def-be24-157c51fa0b4e)
 
@@ -17,7 +17,7 @@
 ssh username@ip
 ```
 
-# Pre-Requirements 🛠
+## Pre-Requirements 🛠
 
 # Install Python and Other Tools
 
@@ -91,92 +91,59 @@ yarn -v
 </div>
 
 
-* 1️⃣ Clone RL-SWARM Repo
+ 1️⃣ Create a screen session **(vps only)**
+
+```
+screen -S gensyn
+````
+
+
+ 2️⃣ Clone RL-SWARM Repo
 
 ```
 git clone https://github.com/gensyn-ai/rl-swarm.git
 ```
 
 
-* 2️⃣ Create a screen session **(vps)**
-
-```
-screen -S gensyn
-````
-
-* 3️⃣ Navigate to rl-swarm
+ 3️⃣ Navigate to rl-swarm
 
 ```
 cd rl-swarm
 ```
 
-* 4️⃣ Create & Activate a Virtual Environment
+ 4️⃣ Create & Activate a Virtual Environment
 
 ```
 python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-* 5️⃣ Install Left-over dependencies
 
-```
-cd modal-login
-```
-
-```
-yarn install
-```
-
-```
-yarn upgrade &&  yarn add next@latest &&  yarn add viem@latest
-```
-
-* 6️⃣ Run the swarm Node 🚀
-
-```
-cd ..
-```
+#### 5️⃣ Run the swarm Node 
 
 ```
 ./run_rl_swarm.sh
 ```
 
-- After Running the Above command it will promt `Would you like to connect to the Testnet? [Y/n]` Enter `Y`
-
-- After than it will promt `>> Which swarm would you like to join (Math (A) or Math Hard (B))? [A/b]`  Enter   `a`
-
-- After than it will promt `>> How many parameters (in billions)? [0.5, 1.5, 7, 32, 72]`    
-
-👇See below and Choose the model Depends on Your System! 
-
-<pre>
-- Qwen 2.5 0.5B                - Recommended 4GB RAM, (1GB DOWNLOAD)
-- Qwen 2.5 1.5B                - Recommended 8GB RAM, (4GB DOWNLOAD)
-- Qwen 2.5 7B                  - Recommended 16GB RAM, (15GB DOWNLOAD)
-- Qwen 2.5 32B (4 bit)         - Recommended 50GB RAM, (35GB DOWNLOAD)
-- Qwen 2.5 72B (4 bit)         - Recommended 100GB RAM, (70GB DOWNLOAD)
-</pre>
-    
-- After that A web Pop-Up will appear, It will ask u to Login ( if no web pop-up then u have to paste this on ur brower `http://localhost:3000/` 
-
-
-- Now Login With Your Email Id, Enter OTP and back to ur Terminal/Wsl? **( VPS users check FAQ1 )**
-
-
-- Now U can see A `ORG_ID` On ur Terminal..Save it!
-
+* Now it will promt you to login: Follow: [1️⃣ How to Login or access  http://localhost:3000/ in VPS? 📶](https://github.com/Mayankgg01/Gensyn-ai-Rl-Swarm_Guide?tab=readme-ov-file#1%EF%B8%8F%E2%83%A3-how-to-login-or-access--httplocalhost3000-in-vps-)
 
 * Now It will promt `Would you like to push models you train in the RL swarm to the Hugging Face Hub? [y/N]` Enter `N`
 
-* After that it will ask u to select 3 choices related to `W&B Account` just enter `3` - wandb: (3) (Don't visualize my results )
+* Now It will promt `>> Enter the name of the model you want to use in huggingface repo/name format, or press [Enter] to use the default model.`  
 
-* If u have to see your node's details or logs on WANDB WEB then u can choose 1 and enter your api key there, so it will sync your node to wandb web!
+📋 See below and Choose the model Depends on Your System! & If u want default model then Just press `Enter`
 
-![image](https://github.com/user-attachments/assets/e31345ce-c66c-45b1-a861-e3cc96308544)
+<pre>
+ Gensyn/Qwen2.5-0.5B-Instruct
+ Qwen/Qwen3-0.6B
+ nvidia/AceInstruct-1.5B
+ dnotitia/Smoothie-Qwen3-1.7B
+ Gensyn/Qwen2.5-1.5B-Instruct
+</pre>
+    
+📋 Model-by-Model Breakdown
 
-
-![image](https://github.com/user-attachments/assets/c700e3ce-64b6-4bfb-86c4-fd2f2050c88d)
-
+![image](https://github.com/user-attachments/assets/4d28dc52-c83f-4a1d-82b2-820023ee554d)
 
 
 Here we go🚀
@@ -186,11 +153,11 @@ Its Done ✅
 It will Generate Logs Soon🙌
 
 
-* Detach from `screen session` **(vps)**
+# Detach & Attach from screen
 
-Use `Ctrl + A` and then press `D`
+`ctrl` `A` `D` To Detach from screen 
 
-* Attach to gensyn Screen to see Logs
+* Attach with previous screen:
 
 ```
 screen -r gensyn
@@ -205,7 +172,7 @@ screen -r gensyn
 </div>
 
 
-# 1️⃣ How to Login or access  http://localhost:3000/ in VPS? 📶
+## 1️⃣ How to Login or access  http://localhost:3000/ in VPS? 📶
 
 * Open a new Terminal and login ur vps 
 
@@ -258,32 +225,14 @@ cloudflared tunnel --url http://localhost:3000
 
 
 
-# 2️⃣ Solution of OOM errors on MacBook (Memory/Cpu limit)
-
-* Open -
- ```
-nano ~/.zshrc
-```
-
-* Paste in the file
-
-```
-export PYTORCH_MPS_HIGH_WATERMARK_RATIO=0.0
-export PYTORCH_ENABLE_MPS_FALLBACK=1
-```
-* Reload with
-
-```
-  source ~/.zshrc
-```
-
-# 3️⃣ How to get the Node Name?
+## 2️⃣ How to get the Node Name?
 
 * Check the image below to get your Node id!
 
-![image](https://github.com/user-attachments/assets/728c6401-75c8-43b4-973c-e9d515c4b453)
+![image](https://github.com/user-attachments/assets/110a146e-d920-4713-b6b7-f5f5377b9bac)
 
-# 4️⃣ Save your `swarm.pem` file (for future login)
+
+## 3️⃣ Save your `swarm.pem` file (for future login)
 
 * open a wsl window 
 
@@ -296,7 +245,7 @@ scp USERNAME@YOUR_IP:~/rl-swarm/swarm.pem ~/swarm.pem
 It will save here in ur Terminal's Root Directory!
 
 
-# 5️⃣ How To start the Next Day (Local Pc)
+## 4️⃣ How To start the Next Day (Local Pc)
 
 *
  ```
@@ -320,38 +269,13 @@ source .venv/bin/activate
 
 
 
-# 6️⃣ Solution of >> Shutting Down trainer.. at the starting of node!
-
-❗❗This solution is not for whoes who have the terminated error after the login process!
-
-![image](https://github.com/user-attachments/assets/ac617699-77ce-4bae-8083-1c134386bb47)
 
 
-* install pino-pretty
-
-```
-yarn add -D pino-pretty
-```
-
-* Make changes
-
-```
-rm -rf $HOME/rl-swarm/modal-login/app/layout.tsx
-```
-
-```
-curl -o $HOME/rl-swarm/modal-login/app/layout.tsx https://raw.githubusercontent.com/Mayankgg01/Gensyn-ai-Rl-Swarm_Guide/main/rl-swarm/modal-login/app/layout.tsx
-```
-
-
-* Now follow the process of starting the node.
-
-❗❗IMP: if ur node got terminate after the login, Then just Restart your node:
 
 
 <div align="center">
 
-# 📈 Upgrade to new release (v0.4.3) {Mac/Linux} 
+# 📈 Upgrade to new release (v0.5.0) {Mac/Linux} 
 
 </div>
 
@@ -385,18 +309,15 @@ git pull origin main
 ./run_rl_swarm.sh
 ```
 
-* All set, As You guys alraedy know what to do next! No need to told again! just follow the login process and select model.
+* Now follow all the process from [5️⃣ Run the swarm Node](https://github.com/Mayankgg01/Gensyn-ai-Rl-Swarm_Guide/edit/main/README.md#5%EF%B8%8F%E2%83%A3-run-the-swarm-node)
 
 
-
-Follow official Docs for more info and Errors!
-
+<pre>
 
 👉 Join TG for more Updates: https://telegram.me/cryptogg
 
 If U have any issue then open a issue on this repo or Dm me on TG~
 
-Thank U! 👨🏻‍💻
+Thank U! 👨🏻‍💻    Happy Coding💗
 
-Happy Coding💗
-
+</pre>
