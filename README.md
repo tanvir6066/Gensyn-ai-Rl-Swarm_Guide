@@ -129,21 +129,10 @@ source .venv/bin/activate
 
 * Now It will promt `Would you like to push models you train in the RL swarm to the Hugging Face Hub? [y/N]` Enter `N`
 
-* Now It will promt `>> Enter the name of the model you want to use in huggingface repo/name format, or press [Enter] to use the default model.`  
+* Now It will promt `>> Enter the name of the model you want to use in huggingface repo/name format, or press [Enter] to use the default model.`  press `Enter` & get defalut model:
 
-📋 See below and Choose the model Depends on Your System! & If u want default model then Just press `Enter`
 
-<pre>
- Gensyn/Qwen2.5-0.5B-Instruct
- Qwen/Qwen3-0.6B
- nvidia/AceInstruct-1.5B
- dnotitia/Smoothie-Qwen3-1.7B
- Gensyn/Qwen2.5-1.5B-Instruct
-</pre>
-    
-📋 Model-by-Model Breakdown
-
-![image](https://github.com/user-attachments/assets/4d28dc52-c83f-4a1d-82b2-820023ee554d)
+---❗ If U put model manually then it can be cause of terminated❗--- So better to use Default:
 
 
 Here we go🚀
