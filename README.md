@@ -134,6 +134,8 @@ source .venv/bin/activate
 
 ---❗ If U put model manually then it can be cause of terminated❗--- So better to use Default:
 
+------>>>If u want to select the model then choose between them: [5️⃣ Choose customised model's](https://github.com/Mayankgg01/Gensyn-ai-Rl-Swarm_Guide/edit/main/README.md#5%EF%B8%8F%E2%83%A3-choose-customised-models)
+
 
 Here we go🚀
 
@@ -258,7 +260,28 @@ source .venv/bin/activate
 
 
 
+## 5️⃣ Choose customised model's
 
+----> Recommend for Mac 
+
+
+<pre>
+
+ Gensyn/Qwen2.5-0.5B-Instruct
+
+ Qwen/Qwen3-0.6B
+
+ nvidia/AceInstruct-1.5B
+
+ dnotitia/Smoothie-Qwen3-1.7B
+
+ Gensyn/Qwen2.5-1.5B-Instruct
+
+</pre>
+    
+📋 Model-by-Model Breakdown
+
+![image](https://github.com/user-attachments/assets/4d28dc52-c83f-4a1d-82b2-820023ee554d)
 
 
 
