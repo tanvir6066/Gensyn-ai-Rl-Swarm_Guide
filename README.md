@@ -284,10 +284,32 @@ source .venv/bin/activate
 ![image](https://github.com/user-attachments/assets/4d28dc52-c83f-4a1d-82b2-820023ee554d)
 
 
+## 6️⃣ **Resolve Terminated Error**
+
+* Follow these command one by one: (You should be in Rl-swarm directory) ❗
+
+
+```
+deactivate 
+rm -rf .venv
+```
+
+```
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+```
+./run_rl_swarm.sh
+```
+
+* Now follow all the process from [5️⃣ Run the swarm Node](https://github.com/Mayankgg01/Gensyn-ai-Rl-Swarm_Guide/edit/main/README.md#5%EF%B8%8F%E2%83%A3-run-the-swarm-node)
+
+* If u still Got terminated error then just restart 1-2 times: or just wait few minutes:
 
 <div align="center">
 
-# 📈 Upgrade to new release (v0.5.0) {Mac/Linux} 
+# 📈 Upgrade to new release (v0.5.2) {Mac/Linux} 
 
 </div>
 
@@ -323,6 +345,7 @@ git pull origin main
 
 * Now follow all the process from [5️⃣ Run the swarm Node](https://github.com/Mayankgg01/Gensyn-ai-Rl-Swarm_Guide/edit/main/README.md#5%EF%B8%8F%E2%83%A3-run-the-swarm-node)
 
+* If u got terminated then follow: [6️⃣Resolve Terminated Error](https://github.com/Mayankgg01/Gensyn-ai-Rl-Swarm_Guide/edit/main/README.md#6%EF%B8%8F%E2%83%A3-resolve-terminated-error)
 
 <pre>
 
